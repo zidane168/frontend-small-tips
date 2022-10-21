@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title> Slider Example </title>
+      <style>
+
+        #slide {
+          display: flex;
+          justify-content: space-around;
+        }
+        .item {
+          width: 100px;
+          height: 100px;
+        }
+      </style>
+   </head>	
+   <body>
+        <div id="slide">
+            <div class="item" style="background: url(img/img1.jpg)"></div>
+            <div class="item" style="background: url(img/img2.jpg)"></div>
+            <div class="item" style="background: url(img/img3.jpg)"></div>          
+        </div>
+
+        <button id="previous"> Previous </button>
+        <button id="next"> Next </button>
+
+        <script>
+          document.getElementById('next').onclick = function() {
+            let lists = document.querySelectorAll('.item')
+            document.getElementById('slide').appendChild(lists[0])
+          }
+
+          document.getElementById('previous').onclick = function() {
+            let lists = document.querySelectorAll('.item')
+            document.getElementById('slide').prepend(lists[lists.length - 1])          }
+        </script>
+   </body>	
+</html>
